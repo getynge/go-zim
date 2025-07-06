@@ -9,7 +9,6 @@ import (
 	"testing"
 
 	"github.com/pkg/errors"
-	"gitlab.com/wpetit/goweb/logger"
 )
 
 type readerTestCase struct {
@@ -26,11 +25,6 @@ type readerTestCase struct {
 }
 
 func TestReader(t *testing.T) {
-	if testing.Verbose() {
-		logger.SetLevel(logger.LevelDebug)
-		logger.SetFormat(logger.FormatHuman)
-	}
-
 	files, err := filepath.Glob("testdata/*.zim")
 	if err != nil {
 		t.Fatalf("%+v", errors.WithStack(err))

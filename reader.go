@@ -1,7 +1,6 @@
 package zim
 
 import (
-	"context"
 	"encoding/binary"
 	"fmt"
 	"io"
@@ -10,7 +9,6 @@ import (
 
 	lru "github.com/hashicorp/golang-lru/v2"
 	"github.com/pkg/errors"
-	"gitlab.com/wpetit/goweb/logger"
 )
 
 const zimFormatMagicNumber uint32 = 0x44D495A
@@ -129,7 +127,6 @@ func (r *Reader) EntryWithURL(ns Namespace, url string) (Entry, error) {
 func (r *Reader) EntryWithTitle(ns Namespace, title string) (Entry, error) {
 	entry, found := r.getEntryByTitleFromCache(ns, title)
 	if found {
-		logger.Debug(context.Background(), "found entry with title from cache", logger.F("entry", entry.FullURL()))
 		return entry, nil
 	}
 

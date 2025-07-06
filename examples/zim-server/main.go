@@ -4,8 +4,8 @@ import (
 	"flag"
 	"net/http"
 
-	"github.com/Bornholm/go-zim"
-	zimFS "github.com/Bornholm/go-zim/fs"
+	"github.com/getynge/go-zim"
+	zimFS "github.com/getynge/go-zim/fs"
 )
 
 var (

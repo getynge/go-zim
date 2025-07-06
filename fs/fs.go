@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/Bornholm/go-zim"
+	"github.com/getynge/go-zim"
 	"github.com/pkg/errors"
 )
 
